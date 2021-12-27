@@ -21,10 +21,13 @@
   font-size: 2em;
 }
 
+.color-transition {
+  transition: background 300ms ease-in-out, color 200ms ease-in-out;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
-  transition: background 400ms ease-in-out, color 200ms ease-in-out;
   font-family: 'Playfair Display', serif;
 }
 
@@ -48,7 +51,6 @@ button#theme-switcher {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  transition: all 400ms ease-in-out;
 }
 
 button#theme-switcher:hover {
