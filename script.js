@@ -1,5 +1,6 @@
 const body = document.body
 const themeSwitcher = document.getElementById('theme-switcher')
+const prevTheme = window.localStorage.getItem('theme')
 
 function setThemeSwitcherIcon () {
   if (body.classList.contains('light-theme')) {
@@ -13,9 +14,11 @@ function setTheme (theme) {
   if (theme === 'dark') {
     body.classList.remove('light-theme')
     body.classList.add('dark-theme')
+    window.localStorage.setItem('theme', 'dark')
   } else {
     body.classList.remove('dark-theme')
     body.classList.add('light-theme')
+    window.localStorage.setItem('theme', 'light')
   }
 }
 
@@ -29,8 +32,12 @@ function switchTheme () {
   }
 }
 
-if (window.matchMedia('prefers-color-scheme: dark')) {
-  setTheme('dark')
+if (prevTheme) {
+  setTheme(prevTheme)
+} else {
+  if (window.matchMedia('prefers-color-scheme: dark')) {
+    setTheme('dark')
+  }
 }
 
 themeSwitcher.addEventListener('click', switchTheme)
