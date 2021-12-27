@@ -9,14 +9,28 @@ function setThemeSwitcherIcon () {
   }
 }
 
+function setTheme (theme) {
+  if (theme === 'dark') {
+    body.classList.remove('light-theme')
+    body.classList.add('dark-theme')
+  } else {
+    body.classList.remove('dark-theme')
+    body.classList.add('light-theme')
+  }
+}
+
 function switchTheme () {
   if (body.classList.contains('light-theme')) {
-    body.classList.replace('light-theme', 'dark-theme')
+    setTheme('dark')
     setThemeSwitcherIcon()
   } else if (body.classList.contains('dark-theme')) {
-    body.classList.replace('dark-theme', 'light-theme')
+    setTheme('light')
     setThemeSwitcherIcon()
   }
+}
+
+if (window.matchMedia('prefers-color-scheme: dark')) {
+  setTheme('dark')
 }
 
 themeSwitcher.addEventListener('click', switchTheme)
