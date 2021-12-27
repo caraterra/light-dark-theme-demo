@@ -12,7 +12,7 @@
 ## Roadmap
 
 - [X] Set initial theme to user-preferred theme
-- [ ] Save selected theme to local storage
+- [X] Save selected theme to local storage
 - [ ] Media queries for mobile-friendliness
 
 ## Acknowledgements
