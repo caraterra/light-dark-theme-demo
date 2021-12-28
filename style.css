@@ -3,6 +3,7 @@
   --gray1: #383838;
   --gray2: #eee0e0;
   --gray3: #fffdfd;
+  --body-font-size: 1rem;
 }
 
 .light-theme {
@@ -32,13 +33,17 @@ body {
 }
 
 #lorem-ipsum {
-  margin: auto;
-  padding: 10rem;
   line-height: 1.5;
+  font-size: var(--body-font-size);
   letter-spacing: .03em;
-  width: 39rem;
-  align-self: center;
-  justify-self: center;
+  max-width: 39rem;
+  margin: 8rem auto auto auto;
+}
+
+@media (max-width: 600px) {
+  #lorem-ipsum {
+    margin-top: .1rem;
+  }
 }
 
 button#theme-switcher {

@@ -13,7 +13,7 @@
 
 - [X] Set initial theme to user-preferred theme
 - [X] Save selected theme to local storage
-- [ ] Media queries for mobile-friendliness
+- [X] Media queries for mobile-friendliness
 
 ## Acknowledgements
 
